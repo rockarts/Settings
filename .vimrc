@@ -56,6 +56,11 @@ set wildmode=longest,list
 " GRB: clear the search buffer when hitting return
 :nnoremap <CR> :nohlsearch<CR>/<BS>
 
+nnoremap <leader><leader> <c-^>
+
+" Map ,e to open files in the same directory as the current file
+map <leader>e :e <C-R>=expand("%:h")<cr>/
+
 function! InsertTabWrapper()
     let col = col('.') - 1
         if !col || getline('.')[col - 1] !~ '\k'
